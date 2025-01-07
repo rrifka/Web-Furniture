@@ -63,11 +63,11 @@ const filterBox = document.querySelector("[data-filter]");
 let lastClickedFilterBtn = filterBtns[0];
 
 const filter = function () {
-    lastClickedFilterBtn.classList.add("active");
-    this.classList.add("active");
-    lastClickedFilterBtn = this;
+  lastClickedFilterBtn.classList.remove("active");
+  this.classList.add("active");
+  lastClickedFilterBtn = this;
 
-    filterBox.setAttribute("data-filter", this.dataset.filterBtn)
+  filterBox.setAttribute("data-filter", this.dataset.filterBtn)
 }
 
 addEventOnElem(filterBtns, "click", filter);
